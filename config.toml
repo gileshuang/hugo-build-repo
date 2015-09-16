@@ -1,0 +1,22 @@
+theme="material-design"
+baseurl = "http://alienhjy.github.io/"
+languageCode = "zh-cn"
+title = "黄家垚的主页"
+MetaDataFormat = "toml"
+paginate = 9 # To specify a multiple of 3
+copyright = "© 2015 Copyleft Text"
+
+[params]
+  description = "我的第一个个人页面" # optional
+#  twitter = "Your Twitter Name" # optional
+  github = "alienhjy" # optional
+#  facebook = "Your facebook Name" # optional
+#  gplus = "Your Google+ profile name" # optional
+#  linkedin = "Your LinkedIn Name" # optional
+#  headerCover = "images/headerCover.png" # optional
+#  footerCover = "images/footerCover.png" # optional
+#  googleAnalyticsUserID = "Your Analytics User Id" # optional
+
+[permalinks]
+  post = "/:year/:month/:day/:title/" # optional
+
