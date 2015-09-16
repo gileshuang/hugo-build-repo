@@ -1,5 +1,5 @@
 theme="material-design"
-baseurl = "http://127.0.0.1:1313/"
+baseurl = "http://alienhjy.github.io/"
 languageCode = "zh-cn"
 title = "黄家垚的主页"
 MetaDataFormat = "toml"
