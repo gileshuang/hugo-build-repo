@@ -2,6 +2,9 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+# Replace local ip by github site.
+sed -i 's/127.0.0.1:1313/alienhjy.github.io/' config.toml
+
 # Build the project.
 hugo -t material-design # if using a theme, replace by `hugo -t <yourtheme>`
 
