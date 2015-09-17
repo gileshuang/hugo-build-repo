@@ -26,7 +26,7 @@ title = "苦逼地不会Markdown"
 2. 然而有序列表貌似也没什么卵用
 
 下面是代码段
-```shell
+``` bash
 #!/bin/bash
 echo "hello markdown"
 ```
