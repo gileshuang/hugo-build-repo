@@ -26,6 +26,9 @@
           {{ with .Site.DisqusShortname }}
             {{ partial "disqus.html" . }}
           {{ end }}
+          {{ with .Site.DuoshuoShortname }}
+            {{ partial "duoshuo.html" . }}
+          {{ end }}
         </div>
       </div>
     </div>
