@@ -10,6 +10,8 @@ hugo -t material-design # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
 cd public
+# Pull public before commit
+git pull
 # Add changes to git.
 git add -A
 
