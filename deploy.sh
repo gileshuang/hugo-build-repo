@@ -5,13 +5,17 @@ echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 # Replace local ip by github site.
 sed -i 's/127.0.0.1:1313/alienhjy.github.io/' config.toml
 
+# Pull all before do everything.
+git pull
+cd public
+git pull
+cd ..
+
 # Build the project.
 hugo -t material-design # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
 cd public
-# Pull public before commit
-git pull
 # Add changes to git.
 git add -A
 
