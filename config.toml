@@ -23,5 +23,5 @@ copyright = "© 2015 Copyleft Text"
 
 [permalinks]
 #  post = "/:year/:month/:day/:title/" # optional
-  post = "/:year/:month/:day/:filename/" # optional
+  post = "/:year/:filename/" # optional
 
