@@ -36,7 +36,7 @@ Debian 及广大的 Linux 社区的人们，可以发送你的哀悼信到 <in-m
 
  参考来源：[venturebeat](http://venturebeat.com/2015/12/30/debian-founder-and-docker-employee-ian-murdock-has-died-at-42/)
  、[debian](https://bits.debian.org/2015/12/mourning-ian-murdock.html)
- 、[docker](blog.docker.com/2015/12/ian-murdock/)
+ 、[docker](https://blog.docker.com/2015/12/ian-murdock/)
 
 ***
 本文转载自：<https://linux.cn/article-6828-1.html>
