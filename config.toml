@@ -1,5 +1,6 @@
 theme="material-design"
-baseurl = "http://alienhjy.github.io"
+#baseurl = "http://alienhjy.github.io"
+baseurl = "http://blog.systemctl.top"
 languageCode = "zh-cn"
 title = "黄家垚的主页"
 MetaDataFormat = "toml"
