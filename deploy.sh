@@ -3,7 +3,7 @@
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 # Replace local ip by github site.
-sed -i 's/127.0.0.1:1313/alienhjy.github.io/' config.toml
+sed -i 's/127.0.0.1:1313/blog.systemctl.top/' config.toml
 
 # Pull all before do everything.
 git pull

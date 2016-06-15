@@ -2353,9 +2353,11 @@ html {
 	box-sizing: inherit
 }
 
+/*
 ul {
 	list-style-type: none
 }
+*/
 
 a {
 	color: #039be5;
@@ -2383,9 +2385,11 @@ ul {
 	padding: 0
 }
 
+/*
 ul li {
 	list-style-type: none
 }
+*/
 
 .clearfix {
 	clear: both
@@ -3210,7 +3214,9 @@ span.badge.new:after {
 .mdi-ul {
 	padding-left: 0;
 	margin-left: 2.14285714em;
+	/*
 	list-style-type: none
+	*/
 }
 
 .mdi-ul>li {
@@ -7038,7 +7044,7 @@ em {
 }
 
 strong {
-	font-weight: 500
+	font-weight: bold
 }
 
 small {
