@@ -1,5 +1,5 @@
 theme="material-design"
-#baseurl = "http://alienhjy.github.io"
+#baseurl = "http://gileshuang.github.io"
 baseurl = "http://blog.systemctl.top"
 languageCode = "zh-cn"
 title = "黄家垚的主页"
@@ -11,7 +11,7 @@ copyright = "© 2015 Copyleft Text"
 [params]
   description = "我的第一个个人页面" # optional
 #  twitter = "Your Twitter Name" # optional
-  github = "alienhjy" # optional
+  github = "gileshuang" # optional
   weibo = "jiayaohuang1992" # optional
   gitosc = "aliendata" # optional
 #  facebook = "Your facebook Name" # optional
