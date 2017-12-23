@@ -184,6 +184,37 @@ From=222.222.222.222
 至此，应当能够分别通过两个 IP 访问该服务器了。  
 由于全局 Gateway 配置为 111.111.111.1，所以由服务器主动发起的请求则会默认通过 eth0 发送出去。
 
+此时，我们可以查看路由表和策略路由：
+
+``` bash
+[root@archlinux-conoha ~]
+# ip route show
+default via 111.111.111.1 dev eth0 proto static 
+111.111.111.0/24 dev eth0 proto kernel scope link src 111.111.111.111 
+222.222.222.0/24 dev eth1 proto kernel scope link src 222.222.222.222
+[root@archlinux-conoha ~]
+# ip route show table 111
+default via 111.111.111.1 dev eth0 proto static
+111.111.111.0/24 dev eth0 proto static
+[root@archlinux-conoha ~]
+# ip route show table 222
+default via 222.222.222.1 dev eth1 proto static
+222.222.222.0/24 dev eth1 proto static
+[root@archlinux-conoha ~]
+# ip rule show
+0:	from all lookup local
+0:	from 111.111.111.111 lookup 111
+0:	from 222.222.222.222 lookup 222
+32766:	from all lookup main
+32767:	from all lookup default
+[root@archlinux-conoha ~]
+# ip rule show table 111
+0:	from 111.111.111.111 lookup 111
+[root@archlinux-conoha ~]
+# ip rule show table 222
+0:	from 222.222.222.222 lookup 222
+```
+
 PS1：传统的策略路由配置方法中，需要修改`/etc/iproute2/rt_tables`以添加子路由表。
 但使用 systemd-networkd 的过程中，我发现似乎不需要修改该文件也能工作。  
 PS2：在使用过程中，发现似乎是由于 systemd 的 bug，在已经配置好 ip rule 的情况下，
