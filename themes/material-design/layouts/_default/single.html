@@ -44,6 +44,24 @@
             </script>
             <!-- 多说公共JS代码 end -->
           {{ end }}
+          <!-- Gitment 评论系统 -->
+          {{ with .Site.Params.gitment }}
+          <div id="gitment"></div>
+          <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+          <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+          <script>
+            var gitment = new Gitment({
+              id: "{{ $.RelPermalink }}", // 可选。默认为 location.href
+              owner: "{{ $.Site.Params.gitment }}",
+              repo: 'https://github.com/gileshuang/hugo-build-repo',
+              oauth: {
+                client_id: '30408b4f6463ecaf5d87',
+                client_secret: 'a81c6cda52d080e18f7a49762f625407d50b1815',
+                  },
+                })
+            gitment.render('gitment')
+          </script>
+          {{ end }}
         </div>
       </div>
     </div>
