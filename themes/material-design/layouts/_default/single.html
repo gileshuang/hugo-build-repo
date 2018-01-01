@@ -27,18 +27,18 @@
             {{ partial "disqus.html" . }}
           {{ end }}
           <!-- Gitment 评论系统 -->
-          {{ with .Site.Params.gitment }}
+          {{ with .Site.Params.gitment_owner }}
           <div id="gitment"></div>
           <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
           <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
           <script>
             var gitment = new Gitment({
               id: "{{ $.RelPermalink }}", // 可选。默认为 location.href
-              owner: "{{ $.Site.Gitment.owner }}", // 页面所有者的 GitHub ID
-              repo: "{{ $.Site.Gitment.repo }}", // 存储评论的 repo
+              owner: "{{ $.Site.Params.gitment_owner }}", // 页面所有者的 GitHub ID
+              repo: "{{ $.Site.Params.gitment_repo }}", // 存储评论的 repo
               oauth: {
-                client_id: "{{ $.Site.Gitment.clientid }}",
-                client_secret: "{{ $.Site.Gitment.clientsecret }}",
+                client_id: "{{ $.Site.Params.gitment_clientid }}",
+                client_secret: "{{ $.Site.Params.gitment_clientsecret }}",
                   },
                 })
             gitment.render('gitment')

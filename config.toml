@@ -17,16 +17,19 @@ copyright = "© 2015 Copyleft Text"
 #  facebook = "Your facebook Name" # optional
 #  gplus = "Your Google+ profile name" # optional
 #  linkedin = "Your LinkedIn Name" # optional
-  gitment = "gileshuang" # optional
+
+   # Gitment, optional
+  gitment_owner = "gileshuang" # optional
+  gitment_repo = "gileshuang.github.io"
+  gitment_clientid = "30408b4f6463ecaf5d87"
+  gitment_clientsecret = "a81c6cda52d080e18f7a49762f625407d50b1815"
+
 #  headerCover = "images/headerCover.png" # optional
 #  footerCover = "images/footerCover.png" # optional
 #  googleAnalyticsUserID = "Your Analytics User Id" # optional
 
 [gitment]
   owner = "gileshuang"
-  repo = "gileshuang.github.io"
-  clientid = "30408b4f6463ecaf5d87"
-  clientsecret = "a81c6cda52d080e18f7a49762f625407d50b1815"
 
 [permalinks]
 #  post = "/:year/:month/:day/:title/" # optional
