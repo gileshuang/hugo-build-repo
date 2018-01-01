@@ -10,7 +10,7 @@ copyright = "© 2015 Copyleft Text"
 
 [params]
   description = "我的第一个个人页面" # optional
-#  twitter = "Your Twitter Name" # optional
+  twitter = "giles_huang" # optional
   github = "gileshuang" # optional
   weibo = "jiayaohuang1992" # optional
   gitosc = "aliendata" # optional
