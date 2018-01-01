@@ -138,10 +138,12 @@ Table=111
 Destination=111.111.111.0/24
 Source=111.111.111.111
 
-# 配置到该子路由表的策略，该小节等同于：
+# 配置到该子路由表的策略，该小节等同于下面两个步骤：
+# echo "100 111" >> /etc/iproute2/rt_tables && \
 # ip rule add from 111.111.111.111 table 111
 [RoutingPolicyRule]
 Table=111
+Priority=100
 From=111.111.111.111
 ```
 
@@ -174,9 +176,11 @@ Destination=222.222.222.0/24
 Source=222.222.222.222
 
 # 配置到该子路由表的策略，该小节等同于：
+# echo "200 222" >> /etc/iproute2/rt_tables && \
 # ip rule add from 222.222.222.222 table 222
 [RoutingPolicyRule]
 Table=222
+Priority=200
 From=222.222.222.222
 ```
 
@@ -203,8 +207,8 @@ default via 222.222.222.1 dev eth1 proto static
 [root@archlinux-conoha ~]
 # ip rule show
 0:	from all lookup local
-0:	from 111.111.111.111 lookup 111
-0:	from 222.222.222.222 lookup 222
+100:	from 111.111.111.111 lookup 111
+200:	from 222.222.222.222 lookup 222
 32766:	from all lookup main
 32767:	from all lookup default
 [root@archlinux-conoha ~]
@@ -216,7 +220,9 @@ default via 222.222.222.1 dev eth1 proto static
 ```
 
 PS1：传统的策略路由配置方法中，需要修改`/etc/iproute2/rt_tables`以添加子路由表。
-但使用 systemd-networkd 的过程中，我发现似乎不需要修改该文件也能工作。  
+但使用 systemd-networkd 的过程中，我发现似乎不需要修改该文件也能工作。
+不过作为替代，需要将路由表的优先级写到 [RoutingPolicyRule] 的
+`Priority=` 字段。  
 PS2：在使用过程中，发现似乎是由于 systemd 的 bug，在已经配置好 ip rule 的情况下，
 `systemctl restart systemd-networkd.service`会出现服务重启失败。需要手动删掉对应的 ip rule，
 然后再重启该服务。
