@@ -34,11 +34,11 @@
           <script>
             var gitment = new Gitment({
               id: "{{ $.RelPermalink }}", // 可选。默认为 location.href
-              owner: "{{ $.Site.Params.gitment }}", // 页面所有者的 GitHub ID
-              repo: 'gileshuang.github.io', // 存储评论的 repo
+              owner: "{{ $.Site.Gitment.owner }}", // 页面所有者的 GitHub ID
+              repo: "{{ $.Site.Gitment.repo }}", // 存储评论的 repo
               oauth: {
-                client_id: '30408b4f6463ecaf5d87',
-                client_secret: 'a81c6cda52d080e18f7a49762f625407d50b1815',
+                client_id: "{{ $.Site.Gitment.clientid }}",
+                client_secret: "{{ $.Site.Gitment.clientsecret }}",
                   },
                 })
             gitment.render('gitment')
