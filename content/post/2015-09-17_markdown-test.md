@@ -6,9 +6,10 @@ title = "苦逼地不会Markdown"
 
 +++
 
-本文的 Markdown 源码可到<https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md>查看。  
 不过我知道写得很渣，轻喷。。。  
 <!--more-->
+
+本文的 Markdown 源码可到<https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md>查看。  
 
 独立的行中有三个以上的星号，下面应当有一条分割线
 ***
