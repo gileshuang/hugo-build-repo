@@ -89,19 +89,19 @@ git config --global https.proxy 'socks5://127.0.0.1:1081'
 配置 git，使其全局使用该代理：
 
 ```bash
-git config --global core.gitProxy "/opt/bin/socks5proxywrapper"
+git config --global core.gitProxy '/opt/bin/socks5proxywrapper'
 ```
 
 也可针对特定域名启用代理，如：
 
 ```bash
-git config --global core.gitProxy '"/opt/bin/socks5proxywrapper" for git.kernel.org'
+git config --global core.gitProxy '/opt/bin/socks5proxywrapper for git.kernel.org'
 ```
 
 临时启用代理而不想将配置保存下来的话，可以使用设置环境变量的方法：
 
 ```bash
-export GIT_PROXY_COMMAND="/opt/bin/socks5proxywrapper"
+export GIT_PROXY_COMMAND=/opt/bin/socks5proxywrapper
 ```
 
 #### 6. 参考链接
