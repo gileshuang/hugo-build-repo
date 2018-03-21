@@ -1,6 +1,6 @@
 theme="material-design"
 #baseurl = "http://gileshuang.github.io"
-baseurl = "https://blog.systemctl.top"
+baseurl = "http://blog.systemctl.top"
 languageCode = "zh-cn"
 title = "黄家垚的主页"
 MetaDataFormat = "toml"
