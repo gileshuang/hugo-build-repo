@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>苦逼地不会Markdown</title>
+  <link href="https://blog.systemctl.top/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/syntax-highlighter.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(https://blog.systemctl.top/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://blog.systemctl.top"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">黄家垚的主页</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">我的第一个个人页面</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/gileshuang"><img src="https://blog.systemctl.top/images/github2-dreamstale35.png"></a>
+        
+        
+          <a href="http://weibo.com/jiayaohuang1992"><img src="https://blog.systemctl.top/images/weibo-dreamstale55.png"></a>
+        
+        
+          <a href="https://git.oschina.net/aliendata"><img src="https://blog.systemctl.top/images/gitosc-dreamstale55.png"></a>
+        
+        
+          <a href="https://www.facebook.com/huangjiayao"><img src="https://blog.systemctl.top/images/facebook-dreamstale25.png"></a>
+        
+        
+          <a href="https://twitter.com/giles_huang"><img src="https://blog.systemctl.top/images/twitter-dreamstale71.png"></a>
+        
+        
+        
+          <a href="https://blog.systemctl.top/index.xml"><img src="https://blog.systemctl.top/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://blog.systemctl.top/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>苦逼地不会Markdown</h4>
+          <p>
+          
+            
+              <a href="https://blog.systemctl.top/categories/%E7%A0%81%E5%86%9C%E5%90%91/">码农向</a>
+            
+          
+          </p>
+          <p><p>不过我知道写得很渣，轻喷。。。</p>
+
+<p>本文的 Markdown 源码可到<a href="https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md">这里</a>查看。</p>
+
+<p></p>
+
+<p>独立的行中有三个以上的星号，下面应当有一条分割线</p>
+
+<hr />
+
+<h2 id="这是二级标题">这是二级标题</h2>
+
+<h4 id="这是四级标题">这是四级标题</h4>
+
+<blockquote>
+<p>这是一个引用,
+然而这里并没有换行。。。<br />
+上一句行尾有两个空格，瞧，这里换行了吧～</p>
+
+<blockquote>
+<p>引用支持嵌套。然而嵌套的引用应该跟上一级的引用在不同的块，<br />
+即，嵌套的引用跟其它级别之间应当用空行分隔开。。。</p>
+</blockquote>
+</blockquote>
+
+<ul>
+<li>无序列表可以用星号</li>
+
+<li><p>这是第二个列表项</p></li>
+
+<li><p>也可以用加号</p></li>
+
+<li><p>然而列表并不起作用</p></li>
+
+<li><p>也可以用减号</p></li>
+
+<li><p>然而三种无序列表都没有作用。。。</p></li>
+</ul>
+
+<ol>
+<li>数字加英文句号是有序列表</li>
+<li>然而有序列表貌似没什么卵用</li>
+</ol>
+
+<p>下面是代码段</p>
+
+<pre><code class="language-bash">#!/bin/bash
+echo &quot;hello markdown&quot;
+</code></pre>
+
+<p>行首有四个空格或者tab，也应当是一个代码段。这种方式的代码段前后应当有空行</p>
+
+<pre><code>#!/bin/bash
+echo &quot;hello world&quot;
+</code></pre>
+
+<p>由于本主题的高亮实在有问题，我从 purehugo 主题取了一个 syntax-highlighter.css 样式表过来，才勉强给代码段周围加上框框，但依旧没有解决语法高亮的问题。。。包括各种列表样式不准确等等，总之问题多多。。。</p>
+
+<p>单星号 = <em>斜体</em><br />
+单下划线 = <em>斜体</em><br />
+双星号 = <strong>加粗</strong><br />
+双下划线 = <strong>加粗</strong><br />
+<b>加粗就是不生效。。。看我来一段HTML格式的加粗</b></p>
+
+<p>这是InLine风格的<a href="https://github.com/" title="这是可选标题">链接</a><br />
+这是Reference风格的<a href="https://github.com/" title="这是可选标题">链接</a>。</p>
+
+<p>这是InLine风格的图片示例：<img src="/images/logo.jpg" alt="替代文本" title="可选标题" /><br />
+这是Reference风格的图片示例：<img src="/images/logo.jpg" alt="替代文本" title="可选标题" /></p>
+
+<p>这是HTML风格的图片示例：<img src="/images/logo.jpg" alt="替代文本" title=“可选标题” width=200 /></p>
+
+<h4 id="其它">其它</h4>
+
+<h5 id="自动链接">自动链接：</h5>
+
+<p>使用尖括号，可以为邮箱地址或者链接创建自动链接，比如这个：<a href="https://github.com/">https://github.com/</a></p>
+
+<h5 id="分隔线">分隔线</h5>
+
+<p>在一行中使用三个或三个以上的*、-或_可以添加分隔线，其中可以有空白，但是不能有其他字符。</p>
+
+<h5 id="转义字符">转义字符</h5>
+
+<p>Markdown中的转义字符为\，可以转义的有：<br />
+    \\ 反斜杠<br />
+    \` 反引号<br />
+    \* 星号<br />
+    \_ 下划线<br />
+    \{\} 大括号<br />
+    \[\] 中括号<br />
+    \(\) 小括号<br />
+    \# 井号<br />
+    \+ 加号<br />
+    \- 减号<br />
+    \. 英文句号<br />
+    \! 感叹号</p>
+
+<h5 id="表格">表格</h5>
+
+<pre><code class="language-markdown">| 表格标题1 | 表格标题2 | 表格标题3 |
+| :------ | :------: | ------: |
+| 表格内容1 | 表格内容2 | 表格内容3 |
+</code></pre>
+
+<p>预览效果：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">表格标题1</th>
+<th align="center">表格标题2</th>
+<th align="right">表格标题3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">表格内容1</td>
+<td align="center">表格内容2</td>
+<td align="right">表格内容3</td>
+</tr>
+</tbody>
+</table></p>
+          <p>17 Sep 2015
+            
+              
+                <a href="https://blog.systemctl.top/tags/markdown/">#markdown</a>
+              
+            
+          </p>
+          
+          
+          
+          <div id="gitment"></div>
+          <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+          <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+          <script>
+            var gitment = new Gitment({
+              id: "\/2015\/2015-09-17_markdown-test\/", 
+              owner: "gileshuang", 
+              repo: "gileshuang.github.io", 
+              oauth: {
+                client_id: "30408b4f6463ecaf5d87",
+                client_secret: "a81c6cda52d080e18f7a49762f625407d50b1815",
+                  },
+                })
+            gitment.render('gitment')
+          </script>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://blog.systemctl.top/2015/2015-09-20_using-class-like-cpp-in-golang/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyleft Text
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <script src="https://blog.systemctl.top/js/init.js"></script>
+  <script src="https://blog.systemctl.top/js/highlight.pack.js"></script>
+  <script src="https://blog.systemctl.top/js/materialize.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/markdown/</link>
+    <description>Recent content in Markdown on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Thu, 17 Sep 2015 09:19:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>苦逼地不会Markdown</title>
+      <link>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</link>
+      <pubDate>Thu, 17 Sep 2015 09:19:33 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</guid>
+      <description>&lt;p&gt;不过我知道写得很渣，轻喷。。。&lt;/p&gt;
+
+&lt;p&gt;本文的 Markdown 源码可到&lt;a href=&#34;https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md&#34;&gt;这里&lt;/a&gt;查看。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

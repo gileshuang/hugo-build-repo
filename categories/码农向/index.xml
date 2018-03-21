@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>码农向 on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/categories/%E7%A0%81%E5%86%9C%E5%90%91/</link>
+    <description>Recent content in 码农向 on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Thu, 18 Feb 2016 15:10:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/categories/%E7%A0%81%E5%86%9C%E5%90%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转载]filling a slice using command line flags in go</title>
+      <link>https://blog.systemctl.top/2016/2016-02-18_filling-a-slice-using-command-line-flags-in-go/</link>
+      <pubDate>Thu, 18 Feb 2016 15:10:37 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-02-18_filling-a-slice-using-command-line-flags-in-go/</guid>
+      <description>&lt;p&gt;I wanted to be able to specify a particular command-line flag more than once
+in a Go program. I was about to throw my hands up in despair because I didn’t
+think that the Go flag package could process multiple instances of a
+command-line flag. I was wrong.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang发送http请求</title>
+      <link>https://blog.systemctl.top/2016/2016-01-12_golang-http-request/</link>
+      <pubDate>Tue, 12 Jan 2016 18:05:00 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-01-12_golang-http-request/</guid>
+      <description>&lt;p&gt;本篇记录一下golang中发送一个http请求的基本方法。&lt;br /&gt;
+在本例中，我将尝试向某个URL发送GET请求，并获取其返回的body。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在RHEL6.2上安装docker的准备工作</title>
+      <link>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</link>
+      <pubDate>Fri, 06 Nov 2015 19:01:12 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</guid>
+      <description>&lt;p&gt;最近在尝试 docker，据说很高端大气上档次，于是就在空闲的时候开始鼓捣整。&lt;br /&gt;
+壮哉我大 Arch，内核版本都已经是 4.x 了（截至写本文），完全满足 docker 对内核版本的要求
+（推荐 3.16，最低 3.10，据说红帽的 2.6.32-358 以上由于被打了补丁，也能支持 docker）。&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang中对slice切片进行append时的内存拷贝</title>
+      <link>https://blog.systemctl.top/2015/2015-09-25_copy-action-while-append-to-slice-in-golang/</link>
+      <pubDate>Fri, 25 Sep 2015 11:13:06 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-25_copy-action-while-append-to-slice-in-golang/</guid>
+      <description>&lt;p&gt;Golang中有一个神奇的类型：slice。&lt;br /&gt;
+之所以说它神奇，是因为它是有容量的，因此对于熟悉C语言的用户而言，
+很难在C语言中找到一个跟slice对应的数据结构。&lt;br /&gt;
+本文不对slice的众多特性进行说明，只谈论跟其append操作相关的内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在golang中使用C&#43;&#43;风格的类</title>
+      <link>https://blog.systemctl.top/2015/2015-09-20_using-class-like-cpp-in-golang/</link>
+      <pubDate>Sun, 20 Sep 2015 21:05:59 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-20_using-class-like-cpp-in-golang/</guid>
+      <description>&lt;p&gt;对于接触过C++且刚入门golang的用户而言，有一点可能会让他们抓狂，
+就是golang这货居然只有结构体（struct），没有类（class）！！！&lt;br /&gt;
+其实不用担心，我们大可以用struct实现类似于class的功能。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>苦逼地不会Markdown</title>
+      <link>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</link>
+      <pubDate>Thu, 17 Sep 2015 09:19:33 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</guid>
+      <description>&lt;p&gt;不过我知道写得很渣，轻喷。。。&lt;/p&gt;
+
+&lt;p&gt;本文的 Markdown 源码可到&lt;a href=&#34;https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md&#34;&gt;这里&lt;/a&gt;查看。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

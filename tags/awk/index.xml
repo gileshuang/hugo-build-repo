@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Awk on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/awk/</link>
+    <description>Recent content in Awk on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Mon, 01 Feb 2016 15:01:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转载]awk &amp; sed ，一个老派系统管理员的基本素养</title>
+      <link>https://blog.systemctl.top/2016/2016-02-01_remember-sed-awk-linux-admins-should/</link>
+      <pubDate>Mon, 01 Feb 2016 15:01:13 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-02-01_remember-sed-awk-linux-admins-should/</guid>
+      <description>&lt;p&gt;&lt;font color=red&gt;我们不要让下一代 Linux 和 Unix 的管理员忘记初始化脚本和基本工具的好处&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

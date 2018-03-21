@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/linux/</link>
+    <description>Recent content in Linux on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Sat, 23 Dec 2017 15:04:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 上使用 systemd-networkd 服务配置策略路由</title>
+      <link>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</link>
+      <pubDate>Sat, 23 Dec 2017 15:04:05 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</guid>
+      <description>&lt;p&gt;这次就记录一下某个很常见却不常用的功能：Linux 上的策略路由。&lt;br /&gt;
+不同于使用 RHEL、ubuntu 等发行版专用配置文件，本文介绍的主要是使用
+systemd-networkd 服务来配置路由。&lt;br /&gt;
+本文将介绍在同一台服务器上接入两块公网网卡，使这两块网卡分别同时工作的场景。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[整理]为 git 和 ssh 设置 socks5 协议的代理</title>
+      <link>https://blog.systemctl.top/2017/2017-09-28_set-proxy-for-git-and-ssh-with-socks5/</link>
+      <pubDate>Thu, 28 Sep 2017 14:58:28 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-09-28_set-proxy-for-git-and-ssh-with-socks5/</guid>
+      <description>&lt;p&gt;由于某魔法结界的存在，我们在从某全球最大同性社交网站下载项目源码或者提交代码到该罪恶的社交网站时，
+经常会出现各种异常。那么，我们能不能施展魔法，让我们的 git/ssh 通过魔法上网呢？&lt;br /&gt;
+（本文的配置并不是给浏览器用的，不适合用来给浏览器魔法上网。本文重点在 git/ssh，需要魔法上网的请绕道。）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]由lsattr -I -e 文件扩展属性引发的一系列事情</title>
+      <link>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</link>
+      <pubDate>Fri, 14 Apr 2017 11:42:04 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</guid>
+      <description>&lt;p&gt;今天同事问了我关于 lsattr 的问题，然后我表示并不清楚，翻看&lt;code&gt;man lsattr&lt;/code&gt;收效甚微。&lt;br /&gt;
+后来次同事找到了下文，发给我看了，我权当记录，转载如下。至于个人的非转载部分的见解，
+会在文章标出，并在文末补充。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;问题起因很简单，今天有学员过来问了这样一个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]最简明扼要的 Systemd 教程，只需十分钟</title>
+      <link>https://blog.systemctl.top/2016/2016-01-20_linux-101-get-the-most-out-of-systemd/</link>
+      <pubDate>Wed, 20 Jan 2016 17:05:29 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-01-20_linux-101-get-the-most-out-of-systemd/</guid>
+      <description>&lt;p&gt;systemd 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。
+systemd 的特性有：支持并行化任务；同时采用 socket 式与 D-Bus 总线式激活服务；
+按需启动守护进程（daemon）；利用 Linux 的 cgroups 监视进程；支持快照和系统恢复；
+维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在RHEL6.2上安装docker的准备工作</title>
+      <link>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</link>
+      <pubDate>Fri, 06 Nov 2015 19:01:12 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</guid>
+      <description>&lt;p&gt;最近在尝试 docker，据说很高端大气上档次，于是就在空闲的时候开始鼓捣整。&lt;br /&gt;
+壮哉我大 Arch，内核版本都已经是 4.x 了（截至写本文），完全满足 docker 对内核版本的要求
+（推荐 3.16，最低 3.10，据说红帽的 2.6.32-358 以上由于被打了补丁，也能支持 docker）。&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

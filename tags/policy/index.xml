@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Policy on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/policy/</link>
+    <description>Recent content in Policy on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Sat, 23 Dec 2017 15:04:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/policy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 上使用 systemd-networkd 服务配置策略路由</title>
+      <link>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</link>
+      <pubDate>Sat, 23 Dec 2017 15:04:05 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</guid>
+      <description>&lt;p&gt;这次就记录一下某个很常见却不常用的功能：Linux 上的策略路由。&lt;br /&gt;
+不同于使用 RHEL、ubuntu 等发行版专用配置文件，本文介绍的主要是使用
+systemd-networkd 服务来配置路由。&lt;br /&gt;
+本文将介绍在同一台服务器上接入两块公网网卡，使这两块网卡分别同时工作的场景。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>[转载]filling a slice using command line flags in go</title>
+  <link href="https://blog.systemctl.top/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/syntax-highlighter.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(https://blog.systemctl.top/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://blog.systemctl.top"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">黄家垚的主页</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">我的第一个个人页面</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/gileshuang"><img src="https://blog.systemctl.top/images/github2-dreamstale35.png"></a>
+        
+        
+          <a href="http://weibo.com/jiayaohuang1992"><img src="https://blog.systemctl.top/images/weibo-dreamstale55.png"></a>
+        
+        
+          <a href="https://git.oschina.net/aliendata"><img src="https://blog.systemctl.top/images/gitosc-dreamstale55.png"></a>
+        
+        
+          <a href="https://www.facebook.com/huangjiayao"><img src="https://blog.systemctl.top/images/facebook-dreamstale25.png"></a>
+        
+        
+          <a href="https://twitter.com/giles_huang"><img src="https://blog.systemctl.top/images/twitter-dreamstale71.png"></a>
+        
+        
+        
+          <a href="https://blog.systemctl.top/index.xml"><img src="https://blog.systemctl.top/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://blog.systemctl.top/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>[转载]filling a slice using command line flags in go</h4>
+          <p>
+          
+            
+              <a href="https://blog.systemctl.top/categories/%E7%A0%81%E5%86%9C%E5%90%91/">码农向</a>
+            
+          
+          </p>
+          <p><p>I wanted to be able to specify a particular command-line flag more than once
+in a Go program. I was about to throw my hands up in despair because I didn’t
+think that the Go flag package could process multiple instances of a
+command-line flag. I was wrong.</p>
+
+<p></p>
+
+<p>While I was tempted to write my own command-line options parser,
+I chose to find the idiomatic way to approach the problem.
+If I have learned nothing else from my GoMentors,
+I have learned to try to follow the idioms and to try not to reinvent the wheel.</p>
+
+<p>I found an example by visiting <a href="http://golang.org/pkg/flag/">http://golang.org/pkg/flag/</a> .
+I had to search for the string “FlagSet” in my browser.
+Immediately under the paragraph where the word “FlagSet” first appears,
+is a clickable item labeled “Example”.
+Click the example item and take a look at the code.</p>
+
+<p>I copied the code and toyed with it until I thought I understood it.
+Then, I tried to simplify it and rewrite it.
+My example program will simply accept one or more command-line flags
+with the label -i.  Each argument to -i should be an integer.
+I want to be able to specify -i multiple times on the command-line.
+The program should populate a slice of integers while adhering
+to the above command-line syntax.</p>
+
+<p>Here’s my code … flagstuff.go :</p>
+
+<pre><code class="language-go">// Copyright 2013 - by Jim Lawless
+// License: MIT / X11
+// See: http://www.mailsend-online.com/license2013.php
+//
+// Bear with me ... I'm a Go noob.
+ 
+package main
+ 
+import (
+    &quot;flag&quot;
+    &quot;fmt&quot;
+    &quot;strconv&quot;
+)
+ 
+// Define a type named &quot;intslice&quot; as a slice of ints
+type intslice []int
+ 
+// Now, for our new type, implement the two methods of
+// the flag.Value interface...
+// The first method is String() string
+func (i *intslice) String() string {
+    return fmt.Sprintf(&quot;%d&quot;, *i)
+}
+ 
+// The second method is Set(value string) error
+func (i *intslice) Set(value string) error {
+    fmt.Printf(&quot;%s\n&quot;, value)
+    tmp, err := strconv.Atoi(value)
+    if err != nil {
+        *i = append(*i, -1)
+    } else {
+        *i = append(*i, tmp)
+    }
+    return nil
+}
+ 
+var myints intslice
+ 
+func main() {
+    flag.Var(&amp;myints, &quot;i&quot;, &quot;List of integers&quot;)
+    flag.Parse()
+    if flag.NFlag() == 0 {
+        flag.PrintDefaults()
+    } else {
+        fmt.Println(&quot;Here are the values in 'myints'&quot;)
+        for i := 0; i &lt; len(myints); i++ {
+            fmt.Printf(&quot;%d\n&quot;, myints[i])
+        }
+    }
+}
+</code></pre>
+
+<p>Let’s dissect the code one section at a time … not necessarily in the order
+presented in the source code above.</p>
+
+<p>First, I define a type called intslice that refers to a slice of ints:</p>
+
+<pre><code class="language-go">type intslice []int
+</code></pre>
+
+<p>Later, I define a variable named myints of type intslice.</p>
+
+<pre><code class="language-go">var myints intslice
+</code></pre>
+
+<p>Later in the code, I’m going to be calling flag.Var() passing in &amp;myints as
+the first argument.  The type of the first value to flag.Var() must conform
+to the flag.Value interface which is defined as:</p>
+
+<pre><code class="language-go">type Value interface {
+    String() string
+    Set(string) error
+}
+</code></pre>
+
+<p>I must now define a String() method and a Set() method for my intslice type:</p>
+
+<pre><code class="language-go">func (i *intslice) String() string {
+    return fmt.Sprintf(&quot;%d&quot;, *i)
+}
+ 
+func (i *intslice) Set(value string) error {
+    fmt.Printf(&quot;%s\n&quot;, value)
+    tmp, err := strconv.Atoi(value)
+    if err != nil {
+        *i = append(*i, -1)
+    } else {
+        *i = append(*i, tmp)
+    }
+    return nil
+}
+</code></pre>
+
+<p>The above methods will be called by the parsing engine in the flag package
+when I invoke flag.Parse(). In the String() method, I need to return
+a string-representation of the argument. In the Set() method,
+I then need to append the string value to the specified intslice variable
+by first converting value to an int variable named tmp. If an error occurs
+during conversion, I append an int value of -1 to the intslice variable.</p>
+
+<p>The main body looks like this:</p>
+
+<pre><code class="language-go">func main() {
+    flag.Var(&amp;myints, &quot;i&quot;, &quot;List of integers&quot;)
+    flag.Parse()
+    if flag.NFlag() == 0 {
+        flag.PrintDefaults()
+    } else {
+        fmt.Println(&quot;Here are the values in 'myints'&quot;)
+        for i := 0; i &lt; len(myints); i++ {
+            fmt.Printf(&quot;%d\n&quot;, myints[i])
+        }
+    }
+}
+</code></pre>
+
+<p>Here are a few sample command-line invocations and the output that they produce
+( I’ve added a blank line between each command and the counterpart
+response lines for clarity):</p>
+
+<p>No parameters. I’ve added a check to make sure that more than
+zero flags are specified.</p>
+
+<pre><code>flagstuff
+ 
+  -i=[]: List of integers
+</code></pre>
+
+<p>Let’s specify an invalid flag (-x):</p>
+
+<pre><code>flagstuff -x
+ 
+flag provided but not defined: -x
+Usage of flagstuff:
+  -i=[]: List of integers
+</code></pre>
+
+<p>Let’s specify -i without an argument:</p>
+
+<pre><code>flagstuff -i
+ 
+Usage of flagstuff:
+  -i=[]: List of integers
+</code></pre>
+
+<p>Now, let’s specify a single -i parameter with an integer value:</p>
+
+<pre><code>flagstuff -i 5
+ 
+5
+Here are the values in 'myints'
+5
+</code></pre>
+
+<p>At each invocation of the intslice.Set() method, I display the string that
+has been passed in so that I could observe the mechanics of the parsing process.
+In each example that provide arguments for -i, we’ll first see those values,
+then we’ll see what the slice contains via the for loop that occurs just
+a little later in the code.</p>
+
+<p>Let’s specify a string instead of an int as an argument:</p>
+
+<pre><code>flagstuff -i twelve
+ 
+twelve
+Here are the values in 'myints'
+-1
+</code></pre>
+
+<p>Note that this causes the error condition in the call to strconv.Atoi().
+I have chosen to add the value -1 to the slice when the argument
+doesn’t cleanly parse as an integer.
+You may choose to handle the error differently.</p>
+
+<p>Here is an example with three valid integers:</p>
+
+<pre><code>flagstuff -i 5 -i 6 -i 7
+ 
+5
+6
+7
+Here are the values in 'myints'
+5
+6
+7
+</code></pre>
+
+<p>Note that the example at golang.org contains a section that splits
+the string value passed to Set() based on the presence of the comma character.
+This allows that code to also accept multiple arguments to a single
+command-line flag. I have chosen to avoid doing that to simplify my example.</p>
+
+<p>Knowing how to handle multiple occurrences of a given flag without customizing
+the command-line parser is going to be very helpful for a couple of programs
+that I plan to write. I’m glad that I spent the time going over
+the example golang.org code. I hope to tinker with more exotic command-line
+processing features of the flag package in the near future.</p>
+
+<hr />
+
+<p>原文地址：<a href="https://lawlessguy.wordpress.com/2013/07/23/filling-a-slice-using-command-line-flags-in-go-golang/">https://lawlessguy.wordpress.com/2013/07/23/filling-a-slice-using-command-line-flags-in-go-golang/</a>
+太长了懒得翻译了，又不是不能看。。。</p></p>
+          <p>18 Feb 2016
+            
+              
+                <a href="https://blog.systemctl.top/tags/golang/">#golang</a>
+              
+            
+          </p>
+          
+          
+          
+          <div id="gitment"></div>
+          <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+          <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+          <script>
+            var gitment = new Gitment({
+              id: "\/2016\/2016-02-18_filling-a-slice-using-command-line-flags-in-go\/", 
+              owner: "gileshuang", 
+              repo: "gileshuang.github.io", 
+              oauth: {
+                client_id: "30408b4f6463ecaf5d87",
+                client_secret: "a81c6cda52d080e18f7a49762f625407d50b1815",
+                  },
+                })
+            gitment.render('gitment')
+          </script>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://blog.systemctl.top/2016/2016-06-15_docker-storage-drivers/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://blog.systemctl.top/2016/2016-02-01_remember-sed-awk-linux-admins-should/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyleft Text
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <script src="https://blog.systemctl.top/js/init.js"></script>
+  <script src="https://blog.systemctl.top/js/highlight.pack.js"></script>
+  <script src="https://blog.systemctl.top/js/materialize.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  </body>
+</html>
+

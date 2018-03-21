@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/docker/</link>
+    <description>Recent content in Docker on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Wed, 15 Jun 2016 14:27:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转载]深入Docker存储驱动</title>
+      <link>https://blog.systemctl.top/2016/2016-06-15_docker-storage-drivers/</link>
+      <pubDate>Wed, 15 Jun 2016 14:27:14 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-06-15_docker-storage-drivers/</guid>
+      <description>&lt;p&gt;本文主要介绍了Docker所使用到的几种存储驱动。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在RHEL6.2上安装docker的准备工作</title>
+      <link>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</link>
+      <pubDate>Fri, 06 Nov 2015 19:01:12 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</guid>
+      <description>&lt;p&gt;最近在尝试 docker，据说很高端大气上档次，于是就在空闲的时候开始鼓捣整。&lt;br /&gt;
+壮哉我大 Arch，内核版本都已经是 4.x 了（截至写本文），完全满足 docker 对内核版本的要求
+（推荐 3.16，最低 3.10，据说红帽的 2.6.32-358 以上由于被打了补丁，也能支持 docker）。&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

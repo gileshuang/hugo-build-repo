@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>在golang中使用C&#43;&#43;风格的类</title>
+  <link href="https://blog.systemctl.top/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/syntax-highlighter.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://blog.systemctl.top/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(https://blog.systemctl.top/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="https://blog.systemctl.top"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="https://blog.systemctl.top/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <h1 class="header center teal-text text-lighten-2">黄家垚的主页</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">我的第一个个人页面</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/gileshuang"><img src="https://blog.systemctl.top/images/github2-dreamstale35.png"></a>
+        
+        
+          <a href="http://weibo.com/jiayaohuang1992"><img src="https://blog.systemctl.top/images/weibo-dreamstale55.png"></a>
+        
+        
+          <a href="https://git.oschina.net/aliendata"><img src="https://blog.systemctl.top/images/gitosc-dreamstale55.png"></a>
+        
+        
+          <a href="https://www.facebook.com/huangjiayao"><img src="https://blog.systemctl.top/images/facebook-dreamstale25.png"></a>
+        
+        
+          <a href="https://twitter.com/giles_huang"><img src="https://blog.systemctl.top/images/twitter-dreamstale71.png"></a>
+        
+        
+        
+          <a href="https://blog.systemctl.top/index.xml"><img src="https://blog.systemctl.top/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="https://blog.systemctl.top/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>在golang中使用C&#43;&#43;风格的类</h4>
+          <p>
+          
+            
+              <a href="https://blog.systemctl.top/categories/%E7%A0%81%E5%86%9C%E5%90%91/">码农向</a>
+            
+          
+          </p>
+          <p><p>对于接触过C++且刚入门golang的用户而言，有一点可能会让他们抓狂，
+就是golang这货居然只有结构体（struct），没有类（class）！！！<br />
+其实不用担心，我们大可以用struct实现类似于class的功能。。。</p>
+
+<p></p>
+
+<h5 id="b-目的-b"><b>目的：</b></h5>
+
+<hr />
+
+<p>使struct不仅仅能存储成员变量，还能拥有其成员函数。并且控制外部函数对私有成员变量的访问。
+当然本文仅仅是为了实现上述目的而已，并不关心什么多态、继承等等一大堆乱七八糟的特性（好吧，其实是本渣并不懂那些高级特性）。</p>
+
+<h5 id="b-c-中类的使用-b"><b>C++中类的使用：</b></h5>
+
+<hr />
+
+<p>我们先来看一段C++中是怎么样使用类的。<br />
+首先我们来创建一个头文件<code>classa.h</code>，如你所见，类名叫classa：</p>
+
+<pre><code class="language-cpp">class classa {
+private:
+	int id;
+
+public:
+	void SetID(int);
+	int GetID();
+};
+</code></pre>
+
+<p>然后我们再创建一个源文件<code>classa.cpp</code>，用来实现classa的<code>SetID</code>和<code>GetID</code>方法：</p>
+
+<pre><code class="language-cpp">#include &quot;classa.h&quot;
+
+void classa::SetID(int newid) {
+	this-&gt;id = newid;
+}
+
+int classa::GetID() {
+	return this-&gt;id;
+}
+</code></pre>
+
+<p>最后，建立<code>main.cpp</code>用来初始化一个类的实例，并尝试调用类中的方法：</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &quot;classa.h&quot;
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+	classa ca;
+	ca.SetID(4);
+	cout &lt;&lt; ca.GetID() &lt;&lt; endl;
+	return 0;
+}
+</code></pre>
+
+<p>使用<code>g++ -o main main.cpp classa.cpp</code>编译上述文件，并运行<code>./main</code>，
+如果输出了一个数字4，那这个classa类就应当是以正确的姿势被调用了。</p>
+
+<h5 id="b-golang中为struct添加成员函数-b"><b>golang中为struct添加成员函数</b></h5>
+
+<hr />
+
+<p>不多废话了，作为对比，我们把上述C++代码翻译成golang代码。<br />
+假定我们目前的工作目录为<code>GOPATH</code>，我们在当前路径的子目录下创建一个
+名叫<code>packagea</code>的包，包文件在<code>GOPATH</code>下的路径为<code>src/packagea/packagea.go</code>，
+内容如下：</p>
+
+<pre><code class="language-go">package packagea
+
+type StructClass struct {
+	id int 
+}
+
+func (this *StructClass) SetID(newid int) {
+	this.id = newid
+}
+
+func (this *StructClass) GetID() int {
+	return this.id
+}
+</code></pre>
+
+<p>同样，编写<code>main</code>包以使用<code>packagea</code>包，<code>main</code>包的位置应该在哪就不用多说了吧。<br />
+<code>main</code>包的内容如下：</p>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;packagea&quot;
+)
+
+func main() {
+	var (
+		sc packagea.StructClass = packagea.StructClass{}
+	)
+	sc.SetID(4)
+	fmt.Println(sc.GetID())
+}
+</code></pre>
+
+<p><em>为了便于新手（其实是我自己）理解，我尽量不会使用<code>:=</code>来声明一个变量，
+而是使用臭长臭长的显式声明，以容易对变量的类型一目了然。</em><br />
+如果你希望以指向结构体的指针的形式来声明<code>sc</code>这个结构体，只需把
+<code>sc packagea.StructClass = packagea.StructClass{}</code>替换为
+<code>sc *packagea.StructClass = &amp;packagea.StructClass{}</code>即可。</p>
+
+<h5 id="b-总结-b"><b>总结</b></h5>
+
+<hr />
+
+<p>之前网上找的教程基本上都是把结构体和跟它们关联的函数放在<code>main.go</code>（与方法调用者
+在同一个包里）。
+如果我们希望把它们模块化，当然需要把一个模块的东西放到单独的包中。这个时候需要
+注意的是，小写字母开头的变量和方法都只能在同一个包中被使用，类似于C++类
+中的<code>protect</code>属性。至于<code>private</code>属性？你把每个结构体以及它们关联的方法单独放到
+一个包不久行了。。。<br />
+本文所说的这种用法其实应该是go里面很常见的用法，只是本人愚笨，搞了好久才搞清楚。
+所以在这里记录一下，以便以后哪天又忘了的话可以翻阅。。。</p></p>
+          <p>20 Sep 2015
+            
+              
+                <a href="https://blog.systemctl.top/tags/golang/">#golang</a>
+              
+            
+          </p>
+          
+          
+          
+          <div id="gitment"></div>
+          <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+          <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+          <script>
+            var gitment = new Gitment({
+              id: "\/2015\/2015-09-20_using-class-like-cpp-in-golang\/", 
+              owner: "gileshuang", 
+              repo: "gileshuang.github.io", 
+              oauth: {
+                client_id: "30408b4f6463ecaf5d87",
+                client_secret: "a81c6cda52d080e18f7a49762f625407d50b1815",
+                  },
+                })
+            gitment.render('gitment')
+          </script>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://blog.systemctl.top/2015/2015-09-25_copy-action-while-append-to-slice-in-golang/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="https://blog.systemctl.top/2015/2015-09-17_markdown-test/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyleft Text
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <script src="https://blog.systemctl.top/js/init.js"></script>
+  <script src="https://blog.systemctl.top/js/highlight.pack.js"></script>
+  <script src="https://blog.systemctl.top/js/materialize.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  </body>
+</html>
+

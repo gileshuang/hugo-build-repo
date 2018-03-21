@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/post/</link>
+    <description>Recent content in Posts on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Mon, 01 Jan 2018 18:29:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本博客的评论系统已经迁移到 Gitment</title>
+      <link>https://blog.systemctl.top/2018/2018-01-01_migrate-comment-system-to-gitment/</link>
+      <pubDate>Mon, 01 Jan 2018 18:29:00 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2018/2018-01-01_migrate-comment-system-to-gitment/</guid>
+      <description>&lt;p&gt;之前本博客使用“多说”作为评论框，然而 2017 年 6 月 1 日起多说就已经无法使用。&lt;br /&gt;
+然后，作为懒人的我根本没去在意。。。直到最近闲mang着li无tou聊xian，就想着恢复博客的评论功能。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 上使用 systemd-networkd 服务配置策略路由</title>
+      <link>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</link>
+      <pubDate>Sat, 23 Dec 2017 15:04:05 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-12-23_policy-routing-with-systemd-networkd/</guid>
+      <description>&lt;p&gt;这次就记录一下某个很常见却不常用的功能：Linux 上的策略路由。&lt;br /&gt;
+不同于使用 RHEL、ubuntu 等发行版专用配置文件，本文介绍的主要是使用
+systemd-networkd 服务来配置路由。&lt;br /&gt;
+本文将介绍在同一台服务器上接入两块公网网卡，使这两块网卡分别同时工作的场景。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[整理]为 git 和 ssh 设置 socks5 协议的代理</title>
+      <link>https://blog.systemctl.top/2017/2017-09-28_set-proxy-for-git-and-ssh-with-socks5/</link>
+      <pubDate>Thu, 28 Sep 2017 14:58:28 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-09-28_set-proxy-for-git-and-ssh-with-socks5/</guid>
+      <description>&lt;p&gt;由于某魔法结界的存在，我们在从某全球最大同性社交网站下载项目源码或者提交代码到该罪恶的社交网站时，
+经常会出现各种异常。那么，我们能不能施展魔法，让我们的 git/ssh 通过魔法上网呢？&lt;br /&gt;
+（本文的配置并不是给浏览器用的，不适合用来给浏览器魔法上网。本文重点在 git/ssh，需要魔法上网的请绕道。）&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]由lsattr -I -e 文件扩展属性引发的一系列事情</title>
+      <link>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</link>
+      <pubDate>Fri, 14 Apr 2017 11:42:04 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</guid>
+      <description>&lt;p&gt;今天同事问了我关于 lsattr 的问题，然后我表示并不清楚，翻看&lt;code&gt;man lsattr&lt;/code&gt;收效甚微。&lt;br /&gt;
+后来次同事找到了下文，发给我看了，我权当记录，转载如下。至于个人的非转载部分的见解，
+会在文章标出，并在文末补充。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;问题起因很简单，今天有学员过来问了这样一个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]深入Docker存储驱动</title>
+      <link>https://blog.systemctl.top/2016/2016-06-15_docker-storage-drivers/</link>
+      <pubDate>Wed, 15 Jun 2016 14:27:14 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-06-15_docker-storage-drivers/</guid>
+      <description>&lt;p&gt;本文主要介绍了Docker所使用到的几种存储驱动。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]filling a slice using command line flags in go</title>
+      <link>https://blog.systemctl.top/2016/2016-02-18_filling-a-slice-using-command-line-flags-in-go/</link>
+      <pubDate>Thu, 18 Feb 2016 15:10:37 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-02-18_filling-a-slice-using-command-line-flags-in-go/</guid>
+      <description>&lt;p&gt;I wanted to be able to specify a particular command-line flag more than once
+in a Go program. I was about to throw my hands up in despair because I didn’t
+think that the Go flag package could process multiple instances of a
+command-line flag. I was wrong.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]awk &amp; sed ，一个老派系统管理员的基本素养</title>
+      <link>https://blog.systemctl.top/2016/2016-02-01_remember-sed-awk-linux-admins-should/</link>
+      <pubDate>Mon, 01 Feb 2016 15:01:13 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-02-01_remember-sed-awk-linux-admins-should/</guid>
+      <description>&lt;p&gt;&lt;font color=red&gt;我们不要让下一代 Linux 和 Unix 的管理员忘记初始化脚本和基本工具的好处&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[转载]最简明扼要的 Systemd 教程，只需十分钟</title>
+      <link>https://blog.systemctl.top/2016/2016-01-20_linux-101-get-the-most-out-of-systemd/</link>
+      <pubDate>Wed, 20 Jan 2016 17:05:29 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-01-20_linux-101-get-the-most-out-of-systemd/</guid>
+      <description>&lt;p&gt;systemd 是 Linux 下的一款系统和服务管理器，兼容 SysV 和 LSB 的启动脚本。
+systemd 的特性有：支持并行化任务；同时采用 socket 式与 D-Bus 总线式激活服务；
+按需启动守护进程（daemon）；利用 Linux 的 cgroups 监视进程；支持快照和系统恢复；
+维护挂载点和自动挂载点；各服务间基于依赖关系进行精密控制。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang发送http请求</title>
+      <link>https://blog.systemctl.top/2016/2016-01-12_golang-http-request/</link>
+      <pubDate>Tue, 12 Jan 2016 18:05:00 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2016/2016-01-12_golang-http-request/</guid>
+      <description>&lt;p&gt;本篇记录一下golang中发送一个http请求的基本方法。&lt;br /&gt;
+在本例中，我将尝试向某个URL发送GET请求，并获取其返回的body。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Debian 创始人 Ian Murdock 先生去世，享年 42 岁！</title>
+      <link>https://blog.systemctl.top/2015/2015-12-31_debian-founder-and-docker-employee-ian-murdock-has-died-at-42/</link>
+      <pubDate>Thu, 31 Dec 2015 13:14:38 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-12-31_debian-founder-and-docker-employee-ian-murdock-has-died-at-42/</guid>
+      <description>&lt;p&gt;Docker 公司&lt;a href=&#34;http://blog.docker.com/2015/12/ian-murdock/&#34;&gt;宣布&lt;/a&gt;，著名的 Debian 创始人 Ian Murdock 已经去世，享年 42 岁。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在RHEL6.2上安装docker的准备工作</title>
+      <link>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</link>
+      <pubDate>Fri, 06 Nov 2015 19:01:12 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-11-06_prepare-for-install-docker-in-rhel_6.2/</guid>
+      <description>&lt;p&gt;最近在尝试 docker，据说很高端大气上档次，于是就在空闲的时候开始鼓捣整。&lt;br /&gt;
+壮哉我大 Arch，内核版本都已经是 4.x 了（截至写本文），完全满足 docker 对内核版本的要求
+（推荐 3.16，最低 3.10，据说红帽的 2.6.32-358 以上由于被打了补丁，也能支持 docker）。&lt;br /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>内核开发者Sarah Sharp宣布退出</title>
+      <link>https://blog.systemctl.top/2015/2015-10-09_the-kernel-developer-sarah-sharp-quit/</link>
+      <pubDate>Fri, 09 Oct 2015 20:54:37 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-10-09_the-kernel-developer-sarah-sharp-quit/</guid>
+      <description>&lt;p&gt;曾经&lt;a href=&#34;http://www.solidot.org/story?sid=35607&#34;&gt;公开呼吁&lt;/a&gt;Linus Torvalds文明用语的内核开发者
+Sarah Sharp&lt;a href=&#34;http://sarah.thesharps.us/2015/10/05/closing-a-door/&#34;&gt;宣布退出（Closing a door）&lt;/a&gt;。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>golang中对slice切片进行append时的内存拷贝</title>
+      <link>https://blog.systemctl.top/2015/2015-09-25_copy-action-while-append-to-slice-in-golang/</link>
+      <pubDate>Fri, 25 Sep 2015 11:13:06 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-25_copy-action-while-append-to-slice-in-golang/</guid>
+      <description>&lt;p&gt;Golang中有一个神奇的类型：slice。&lt;br /&gt;
+之所以说它神奇，是因为它是有容量的，因此对于熟悉C语言的用户而言，
+很难在C语言中找到一个跟slice对应的数据结构。&lt;br /&gt;
+本文不对slice的众多特性进行说明，只谈论跟其append操作相关的内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在golang中使用C&#43;&#43;风格的类</title>
+      <link>https://blog.systemctl.top/2015/2015-09-20_using-class-like-cpp-in-golang/</link>
+      <pubDate>Sun, 20 Sep 2015 21:05:59 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-20_using-class-like-cpp-in-golang/</guid>
+      <description>&lt;p&gt;对于接触过C++且刚入门golang的用户而言，有一点可能会让他们抓狂，
+就是golang这货居然只有结构体（struct），没有类（class）！！！&lt;br /&gt;
+其实不用担心，我们大可以用struct实现类似于class的功能。。。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>苦逼地不会Markdown</title>
+      <link>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</link>
+      <pubDate>Thu, 17 Sep 2015 09:19:33 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2015/2015-09-17_markdown-test/</guid>
+      <description>&lt;p&gt;不过我知道写得很渣，轻喷。。。&lt;/p&gt;
+
+&lt;p&gt;本文的 Markdown 源码可到&lt;a href=&#34;https://raw.githubusercontent.com/gileshuang/hugo-build-repo/master/content/post/2015-09-17_markdown-test.md&#34;&gt;这里&lt;/a&gt;查看。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

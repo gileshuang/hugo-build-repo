@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lsattr on 黄家垚的主页</title>
+    <link>https://blog.systemctl.top/tags/lsattr/</link>
+    <description>Recent content in Lsattr on 黄家垚的主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2015 Copyleft Text</copyright>
+    <lastBuildDate>Fri, 14 Apr 2017 11:42:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.systemctl.top/tags/lsattr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转载]由lsattr -I -e 文件扩展属性引发的一系列事情</title>
+      <link>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</link>
+      <pubDate>Fri, 14 Apr 2017 11:42:04 +0800</pubDate>
+      
+      <guid>https://blog.systemctl.top/2017/2017-04-14_something-about-lsattr_-i_-e/</guid>
+      <description>&lt;p&gt;今天同事问了我关于 lsattr 的问题，然后我表示并不清楚，翻看&lt;code&gt;man lsattr&lt;/code&gt;收效甚微。&lt;br /&gt;
+后来次同事找到了下文，发给我看了，我权当记录，转载如下。至于个人的非转载部分的见解，
+会在文章标出，并在文末补充。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;问题起因很简单，今天有学员过来问了这样一个问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
