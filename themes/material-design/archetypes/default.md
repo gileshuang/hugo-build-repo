@@ -7,6 +7,8 @@ date = "{{ .Date }}"
 
 summary
 
+<!--more-->
+
 ******
 
 text
