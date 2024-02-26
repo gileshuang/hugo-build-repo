@@ -45,7 +45,7 @@ eth0 的网关作为全局默认网关。
 现在先只配置 eth0，创建配置文件`/etc/systemd/network/10-eth0.network`：  
 （配置文件名可自行指定，文件后缀需为 `.network`）
 
-``` bash
+``` ini
 # Match 字段匹配网卡设备名。
 [Match]
 Name=eth0
@@ -65,7 +65,7 @@ DNS=8.8.8.8
 
 同理创建 eth1 的配置文件`/etc/systemd/network/10-eth1.network`，但是 eth1 上不指定 Gateway，否则两个默认网关会发生冲突：
 
-``` bash
+``` ini
 [Match]
 Name=eth1
 
@@ -112,7 +112,7 @@ default via 111.111.111.1 dev eth0 proto static
 
 首先将 eth0 的配置文件`/etc/systemd/network/10-eth0.network`修改如下：
 
-``` bash
+``` ini
 [Match]
 Name=eth0
 
@@ -151,7 +151,7 @@ From=111.111.111.111
 
 将 eth1 的配置文件`/etc/systemd/network/10-eth1.network`修改如下：
 
-``` bash
+``` ini
 [Match]
 Name=eth1
 
@@ -164,14 +164,14 @@ DNS=8.8.8.8
 # 依然是在原 eth1 的配置下面多加了几个配置。
 
 # 配置子路由表的默认网关，该小节等同于：
-# ip route add default via 222.222.222.1 dev eth0 table 222
+# ip route add default via 222.222.222.1 dev eth1 table 222
 # Table 字段表示该子路由表的数字 ID。
 [Route]
 Table=222
 Gateway=222.222.222.1
 
 # 配置子路由表的本网段路由，该小节等同于：
-# ip route add 222.222.222.0/24 dev eth0 src 222.222.222.222 table 222
+# ip route add 222.222.222.0/24 dev eth1 src 222.222.222.222 table 222
 [Route]
 Table=222
 Destination=222.222.222.0/24
@@ -208,17 +208,17 @@ default via 222.222.222.1 dev eth1 proto static
 222.222.222.0/24 dev eth1 proto static
 [root@archlinux-conoha ~]
 # ip rule show
-0:	from all lookup local
-100:	from 111.111.111.111 lookup 111
-200:	from 222.222.222.222 lookup 222
-32766:	from all lookup main
-32767:	from all lookup default
+0:  from all lookup local
+100:    from 111.111.111.111 lookup 111
+200:    from 222.222.222.222 lookup 222
+32766:  from all lookup main
+32767:  from all lookup default
 [root@archlinux-conoha ~]
 # ip rule show table 111
-0:	from 111.111.111.111 lookup 111
+0:  from 111.111.111.111 lookup 111
 [root@archlinux-conoha ~]
 # ip rule show table 222
-0:	from 222.222.222.222 lookup 222
+0:  from 222.222.222.222 lookup 222
 ```
 
 PS1：传统的策略路由配置方法中，需要修改`/etc/iproute2/rt_tables`以添加子路由表。
@@ -229,7 +229,7 @@ PS2：在使用过程中，发现似乎是由于 systemd 的 bug，在已经配�
 `systemctl restart systemd-networkd.service`会出现服务重启失败。需要手动删掉对应的 ip rule，
 然后再重启该服务。
 
-### 小节
+### 小结
 
 本文使用新式的 systemd-networkd 配置了传统的双网卡策略路由，
 全程只需修改`/etc/systemd/network`目录下的`.network`配置文件即可。
